@@ -10,6 +10,6 @@ export class LoadNotes implements UseCase {
   }
 
   public async perform(requestUserId: string): Promise<NoteData[]> {
-    return await this.noteRepository.findAllNotesForm(requestUserId);
+    return await this.noteRepository.findAllNotesFrom(requestUserId);
   }
 }

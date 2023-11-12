@@ -39,7 +39,7 @@ export class CreateNote implements UseCase {
       return left(noteOrError.value);
     }
 
-    const owenerNotes: NoteData[] = await this.noteRepository.findAllNotesForm(
+    const owenerNotes: NoteData[] = await this.noteRepository.findAllNotesFrom(
       owner.id!
     );
     const noteExists = owenerNotes.find((note) => note.title === request.title);
